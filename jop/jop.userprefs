@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="jop/jop.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="jop/Přejezd.cs">
+    <Files>
+      <File FileName="jop/Program.cs" Line="1" Column="1" />
+      <File FileName="jop/IzolovanýÚsek.cs" Line="1" Column="1" />
+      <File FileName="jop/Výhybka.cs" Line="1" Column="1" />
+      <File FileName="jop/Návěstidlo.cs" Line="1" Column="1" />
+      <File FileName="jop/Přejezd.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

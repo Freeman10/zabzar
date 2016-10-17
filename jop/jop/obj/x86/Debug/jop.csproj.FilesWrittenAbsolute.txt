@@ -1,0 +1,5 @@
+/media/junkyard/Github/zabzar/jop/jop/jop/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/media/junkyard/Github/zabzar/jop/jop/jop/bin/Debug/jop.exe.mdb
+/media/junkyard/Github/zabzar/jop/jop/jop/bin/Debug/jop.exe
+/media/junkyard/Github/zabzar/jop/jop/jop/obj/x86/Debug/jop.exe
+/media/junkyard/Github/zabzar/jop/jop/jop/obj/x86/Debug/jop.exe.mdb
