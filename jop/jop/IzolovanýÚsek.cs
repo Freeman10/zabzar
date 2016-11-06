@@ -4,7 +4,7 @@ namespace jop
 {
 	public class IzolovanýÚsek
 	{
-		public IzolovanýÚsek ()
+		public IzolovanýÚsek()
 		{
 		}
 	}
