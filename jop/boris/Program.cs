@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Boris
 {
@@ -6,15 +8,25 @@ namespace Boris
     {
         public static void Main(string[] args)
         {
-            var s1 = new Stanice("A");
-            var s2 = new Stanice("B");
-            var s3 = new Stanice("C");
-            var jr = new JízdníŘád<Stanice>();
-//            jr.PřidejPrvek(s1, DateTime.Now, DateTime.Now + TimeSpan.Parse("00:10"), true);
-            jr.PřidejPrvek(s2, DateTime.Now + TimeSpan.Parse("00:15"), DateTime.Now + TimeSpan.Parse("00:20"), true);
-            jr.PřidejPrvek(s3, DateTime.Now + TimeSpan.Parse("00:22"), DateTime.Now + TimeSpan.Parse("00:22"), true);
-            var vlak = new Vlak(DruhVlaku.MOs, 4766, null, jr);
-            jr.Příjezd.Add(s1, DateTime.Now);
+            var h = new StaničníHlasatel();
+            /*Hlášení hl = new StaničníHlášení.PozorVlak("20000");
+            Console.WriteLine(hl.ToString());
+            h.FrontaHlášení.Enqueue(hl);
+            h.FrontaHlášení.Enqueue(new StaničníHlášení.PozorVlak("8700"));
+            h.FrontaHlášení.Enqueue(new StaničníHlášení.PozorVlak("27553"));
+            h.OhlašVše();*/
+            ParserXml xml = new ParserXml("/media/junkyard/Github/zabzar/jop/boris/bin/Debug/phrases.xml", "sound");
+            foreach (KeyValuePair<string, string> kvp in xml.Výsledky)
+            {
+                Console.WriteLine("{0} : {1}", kvp.Key, kvp.Value + "/" + kvp.Key + ".wav");
+            }
+            List<string> seznam = new List<string>();
+            /*foreach (KeyValuePair<string, string> kvp in xml.Výsledky)
+            {
+                seznam.Add(kvp.Key);
+            }*/
+            h.Ohlaš(true);
+            Console.ReadLine();
         }
     }
 }

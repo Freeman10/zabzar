@@ -13,29 +13,51 @@ namespace Boris
             Zpoždění = TimeSpan.Zero;
         }
 
-        public Vlak(DruhVlaku druh, int číslo, string jméno, JízdníŘád<Stanice> jízdníŘád)
+        public Vlak(DruhVlaku druh, uint číslo, string jméno, SlužbyVlaku služby, JízdníŘád<Stanice> jízdníŘád)
         {
             Jméno = jméno;
             Druh = druh;
             Číslo = číslo;  // Výchozí hodnota
             Trasa = jízdníŘád;
             Zpoždění = TimeSpan.Zero;
+            Služby = služby;
+        }
+        public Vlak(DruhVlaku druh, uint číslo, string jméno, string linka, SlužbyVlaku služby, JízdníŘád<Stanice> jízdníŘád)
+        {
+            Jméno = jméno;
+            Druh = druh;
+            Číslo = číslo;  // Výchozí hodnota
+            Trasa = jízdníŘád;
+            Zpoždění = TimeSpan.Zero;
+            Služby = služby;
+            Linka = linka;
         }
 
-        public Vlak(DruhVlaku druh, int číslo, string jméno, JízdníŘád<Stanice> jízdníŘád, TimeSpan zpoždění)
+        public Vlak(DruhVlaku druh, uint číslo, string jméno, SlužbyVlaku služby, JízdníŘád<Stanice> jízdníŘád, TimeSpan zpoždění)
         {
             Jméno = jméno;
             Druh = druh;
             Číslo = číslo;  // Výchozí hodnota
             Trasa = jízdníŘád;
             Zpoždění = TimeSpan.Zero;
+            Služby = služby;
+        }
+
+        public Vlak(DruhVlaku druh, uint číslo, string jméno, SlužbyVlaku služby, string linka, JízdníŘád<Stanice> jízdníŘád, TimeSpan zpoždění)
+        {
+            Jméno = jméno;
+            Druh = druh;
+            Číslo = číslo;  // Výchozí hodnota
+            Trasa = jízdníŘád;
+            Zpoždění = TimeSpan.Zero;
+            Služby = služby;
+            Linka = linka;
         }
             
 
-        public int Číslo  // Číslo vlaku. Není lepší typ než int?
+        public uint Číslo  // Číslo vlaku. Není lepší typ než int?
         {
             get;
-            set;
         }
 
         public string Jméno  // Nějak ošetřit, aby jméno vlaku nebylo jfhgůjdfvbflv-spúfls)úůf)dúf-sú
@@ -50,27 +72,45 @@ namespace Boris
             set;
         }
 
+        public SlužbyVlaku? Služby
+        {
+            get;
+            set;
+        }
+
+        public string Linka
+        {
+            get;
+            set;
+        }
+
+        public string Dopravce
+        {
+            get;
+            set;
+        }
+
         public JízdníŘád<Stanice> Trasa  // Možná vymyslet lepší jméno...
         {
             get;
             set;
         }
 
-//        public Stanice SměrDo
-//        {
-//            get
-//            {
-//                return Trasa;
-//            }
-//        }
+        public Stanice SměrDo
+        {
+            get
+            {
+                return Trasa.Záznamy[Trasa.Záznamy.Count - 1].Klíč;
+            }
+        }
 
-//        public Stanice SměrZ
-//        {
-//            get
-//            {
-//                return Trasa[0];
-//            }
-//        }
+        public Stanice SměrZ
+        {
+            get
+            {
+                return Trasa.Záznamy[0].Klíč;
+            }
+        }
             
 
         public TimeSpan Zpoždění
@@ -89,6 +129,7 @@ namespace Boris
         {
             return Číslo.GetHashCode();
         }
+
         public override bool Equals(object obj)
         {
             var vlak = obj as Vlak;

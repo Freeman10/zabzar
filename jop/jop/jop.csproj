@@ -51,8 +51,19 @@
     <Compile Include="StavTrojcestnéVýhybky.cs" />
     <Compile Include="StavKřižovatkovéVýhybky.cs" />
     <Compile Include="HlavníNávěstidlo.cs" />
-    <Compile Include="NávěstHlavníhoNávěstidla.cs" />
     <Compile Include="DruhyHlavníchNávěstidel.cs" />
+    <Compile Include="ČasovýSoubor.cs" />
+    <Compile Include="ČasovéSoubory.cs" />
+    <Compile Include="NávěstRychlostníSoustavy.cs" />
+    <Compile Include="NávěstiHlavníhoNávěstidla.cs" />
+    <Compile Include="VjezdovéNávěstidlo.cs" />
+    <Compile Include="Směr.cs" />
+    <Compile Include="OdjezdovéNávěstidlo.cs" />
+    <Compile Include="Výkolejka.cs" />
+    <Compile Include="VlakováCesta.cs" />
+    <Compile Include="VloženéNávěstidlo.cs" />
+    <Compile Include="IPrvekKolejiště.cs" />
+    <Compile Include="Kolejiště.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

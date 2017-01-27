@@ -31,7 +31,11 @@ namespace Boris
         public double Poloha  // Kilometrická poloha dopravny
         {
             get;
-            set;
+        }
+
+        public string Trať
+        {
+            get;
         }
 
         public override int GetHashCode()

@@ -11,9 +11,10 @@ namespace jop
         public string Označení  // Označení návěstidla, musí být ošetřeno v konstruktoru každého potomka
         {
             get;
+            set;
         }
 
-        public TNávěst Návěst  // Návěst návěstěná návěstidlem :D
+        public virtual TNávěst Návěst  // Návěst návěstěná návěstidlem :D
         {
             get;
             set;
@@ -27,6 +28,16 @@ namespace jop
         public override int GetHashCode()
         {
             return Označení.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var návěstidlo = obj as Návěstidlo<TNávěst>;
+            if (návěstidlo != null)
+            {
+                return this.Označení == návěstidlo.Označení;
+            }
+            return false;
         }
 	}
 }

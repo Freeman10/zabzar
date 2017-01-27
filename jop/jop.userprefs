@@ -1,8 +1,21 @@
-﻿<Properties StartupItem="jop/jop.csproj">
+﻿<Properties StartupItem="boris/boris.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="jop/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="jop/VlakováCesta.cs">
     <Files>
-      <File FileName="jop/Program.cs" Line="9" Column="31" />
+      <File FileName="boris/Program.cs" Line="32" Column="124" />
+      <File FileName="boris/Hlasatel.cs" Line="1" Column="1" />
+      <File FileName="boris/StaničníHlasatel.cs" Line="1" Column="1" />
+      <File FileName="boris/Hlášení.cs" Line="29" Column="47" />
+      <File FileName="boris/StaničníHlášení.cs" Line="152" Column="40" />
+      <File FileName="boris/DruhZnělky.cs" Line="1" Column="1" />
+      <File FileName="boris/InformačníPanel.cs" Line="1" Column="1" />
+      <File FileName="boris/bin/Debug/phrases.xml" Line="1" Column="1" />
+      <File FileName="boris/bin/Debug/announcements.xml" Line="1" Column="1" />
+      <File FileName="boris/ŠablonaHlášení.cs" Line="12" Column="25" />
+      <File FileName="boris/ParserHlášení.cs" Line="39" Column="58" />
+      <File FileName="boris/ZáznamJízdníhoŘádu.cs" Line="1" Column="1" />
+      <File FileName="jop/IzolovanýÚsek.cs" Line="27" Column="17" />
+      <File FileName="jop/VlakováCesta.cs" Line="58" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

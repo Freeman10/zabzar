@@ -7,65 +7,25 @@ namespace Boris
     {
         public JízdníŘád()
         {
-            Příjezd = new Dictionary<T, DateTime>();
-            Odjezd = new Dictionary<T, DateTime>();
-            StavíZde = new Dictionary<T, bool>();
+            Záznamy = new List<ZáznamJízdníhoŘádu<T>>();
         }
 
-        public Dictionary<T, DateTime> Příjezd
+        public List<ZáznamJízdníhoŘádu<T>> Záznamy
         {
             get;
-            protected set;
-        }
-
-        public Dictionary<T, DateTime> Odjezd
-        {
-            get;
-            protected set;
-        }
-
-        public Dictionary<T, bool> StavíZde
-        {
-            get;
-            protected set;
-        }
-
-        public void PřidejPrvek(T klíč, DateTime příjezd, DateTime odjezd, bool stavíZde)
-        {
-            if (příjezd <= odjezd)
-            {
-                Příjezd.Add(klíč, příjezd);
-                Odjezd.Add(klíč, odjezd);
-                StavíZde.Add(klíč, stavíZde);
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
-        public void OdstraňPrvek(T klíč)
-        {
-            if (Příjezd.ContainsKey(klíč))
-            {
-                Příjezd.Remove(klíč);
-                Odjezd.Remove(klíč);
-                StavíZde.Remove(klíč);
-            }
-            else
-            {
-                throw new IndexOutOfRangeException();
-            }
-
+            set;
         }
 
         public void OvěřIntegritu()  // Metoda zjišťuje, zda-li je takový jízdní řád možný.
         {
-            foreach (KeyValuePair<T, DateTime> příjezdy in Příjezd)
+            foreach (ZáznamJízdníhoŘádu<T> záznam in Záznamy)
             {
-                foreach (KeyValuePair<T, DateTime> odjezdy in Odjezd)
+                if (záznam.Odjezd.HasValue && záznam.Příjezd.HasValue)
                 {
-                    
+                    if (záznam.Odjezd < záznam.Příjezd)
+                    {
+                        throw new DataMisalignedException();
+                    }
                 }
             }
         }

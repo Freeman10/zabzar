@@ -2,23 +2,44 @@
 
 namespace jop
 {
-	public class Kolej  //Základní třída mající jen nejdůležitější věci
+    public class Kolej : IPrvekKolejiště //Základní třída mající jen nejdůležitější věci
 	{
-		public Kolej()
+        public Kolej(uint číslo)
         {
-			
+            PřipojenáVýkolejka = new Výkolejka[2] { null, null };
+            Číslo = číslo;
         }
-		public bool Výkolejka
+        public Výkolejka[] PřipojenáVýkolejka
 		{
 			get;
 			set;
 		}
-        public Kolej LicháNávaznost
+
+        public IzolovanýÚsek[] Úseky
         {
             get;
             set;
         }
-        public Kolej SudáNávaznost
+
+        public uint Číslo
+        {
+            get;
+        }
+
+
+
+
+
+        // Implementace rozhraní IPrvekKolejiště
+
+
+
+        public IPrvekKolejiště[] PředchozíPrvky
+        {
+            get;
+            set;
+        }
+        public IPrvekKolejiště[] NásledujícíPrvky
         {
             get;
             set;

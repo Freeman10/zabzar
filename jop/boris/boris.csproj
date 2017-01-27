@@ -9,6 +9,7 @@
     <AssemblyName>boris</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>alpha</ReleaseVersion>
+    <StartupObject>Boris.MainClass</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -41,6 +43,26 @@
     <Compile Include="JízdníŘád.cs" />
     <Compile Include="Dopravna.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SlužbyVlaku.cs" />
+    <Compile Include="Hlášení.cs" />
+    <Compile Include="DruhHlášení.cs" />
+    <Compile Include="StanovištěNAD.cs" />
+    <Compile Include="DůvodZpoždění.cs" />
+    <Compile Include="ParserXml.cs" />
+    <Compile Include="StaničníHlasatel.cs" />
+    <Compile Include="Hlasatel.cs" />
+    <Compile Include="StaničníHlášení.cs" />
+    <Compile Include="VlakovýHlasatel.cs" />
+    <Compile Include="VlakovéHlášení.cs" />
+    <Compile Include="DruhZnělky.cs" />
+    <Compile Include="ZáznamJízdníhoŘádu.cs" />
+    <Compile Include="InformačníPanel.cs" />
+    <Compile Include="ŠablonaHlášení.cs" />
+    <Compile Include="ParserHlášení.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="bin\Debug\phrases.xml" />
+    <None Include="bin\Debug\announcements.xml" />
+  </ItemGroup>
 </Project>

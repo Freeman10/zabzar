@@ -2,10 +2,40 @@
 
 namespace jop
 {
-    public class HlavníNávěstidlo : Návěstidlo<NávěstHlavníhoNávěstidla>
+    public abstract class HlavníNávěstidlo : Návěstidlo<NávěstiHlavníhoNávěstidla>
     {
-        public HlavníNávěstidlo(DruhyHlavníchNávěstidel druh)
+        public HlavníNávěstidlo()
         {
+        }
+
+        protected NávěstiHlavníhoNávěstidla[] ZakázanéNávěsti
+        {
+            get;
+            set;
+        }
+
+        public override NávěstiHlavníhoNávěstidla Návěst
+        {
+            get
+            {
+                return base.Návěst;
+            }
+            set
+            {
+                foreach (NávěstiHlavníhoNávěstidla návěst in ZakázanéNávěsti)
+                {
+                    if (value == návěst)
+                    {
+                        throw new ArgumentOutOfRangeException();
+                    }
+                }
+            }
+        }
+
+        public bool PřívolávacíNávěst
+        {
+            get;
+            set;
         }
     }
 }

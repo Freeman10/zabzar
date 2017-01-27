@@ -59,6 +59,16 @@ namespace jop
         {
             return Číslo.GetHashCode();
         }
+
+        public override bool Equals(object obj)
+        {
+            var přejezd = obj as Přejezd;
+            if (přejezd != null)
+            {
+                return this.Číslo == přejezd.Číslo;
+            }
+            return false;
+        }
 	}
 }
 
